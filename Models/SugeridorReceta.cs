@@ -8,7 +8,20 @@ class SugeridorReceta
     
     public int calcularEdad()
     {
-        return (DateTime.Today - this.fechaNacimiento).Year;
+        int edad;
+        edad = this.fechaNacimiento.Year - DateTime.Today.Year;
+        if(this.fechaNacimiento.Month > DateTime.Today.Month)
+        {
+            edad -= 1;
+        }
+        else if (this.fechaNacimiento.Month == DateTime.Today.Month)
+        {
+            if (this.fechaNacimiento.Day > DateTime.Today.Day)
+            {
+                edad -= 1;
+            }
+        }
+        return edad;
     }
     public string DeterminarPlato()
     {
@@ -80,7 +93,7 @@ class SugeridorReceta
         }
         else
         {
-            return "No se pudo calcular nivel de dificultad"
+            return "No se pudo calcular nivel de dificultad";
         }
     }
 }
