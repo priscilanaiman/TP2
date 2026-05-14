@@ -28,4 +28,15 @@ public class HomeController : Controller
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+    [HttpGet]
+    public IActionResult GenerarSugerencia(SugeridorReceta sugeridor)
+    {
+        ViewBag.nombre = sugeridor.nombre;
+        ViewBag.edad = sugeridor.calcularEdad();
+        ViewBag.plato = sugeridor.DeterminarPlato();
+        ViewBag.tiempo = sugeridor.CalcularTiempo();
+        ViewBag.cantidad = sugeridor.cantComensales;
+        ViewBag.dificultad = sugeridor.DeterminarDificultad();
+        return View(Resultado);
+    }
 }

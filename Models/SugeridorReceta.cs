@@ -6,6 +6,16 @@ class SugeridorReceta
     public int presupuesto {get;set;}
     public int cantComensales {get;set;}
     
+    public SugeridorReceta(){}
+
+    public SugeridorReceta(string nombre, DateTime fechaNacimiento, string tipoComida, int presupuesto, int cantComensales)
+    {
+        this.nombre = nombre;
+        this.fechaNacimiento = fechaNacimiento;
+        this.tipoComida = tipoComida;
+        this.presupuesto = presupuesto;
+        this.cantComensales = cantComensales;
+    }
     public int calcularEdad()
     {
         int edad;
@@ -19,7 +29,7 @@ class SugeridorReceta
             if (this.fechaNacimiento.Day > DateTime.Today.Day)
             {
                 edad -= 1;
-            }
+            } 
         }
         return edad;
     }

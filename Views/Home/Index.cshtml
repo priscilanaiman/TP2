@@ -1,11 +1,21 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Formulario";
 }
 
 <div class="text-center">
     <h1 class="display-4">Formulario</h1>
     <form method="GET" action='@Url.Action("GenerarSugerencia", "Home")'>
         <label>Nombre:</label>
-        <input type="text" name="nombre">
+        <input type="text" name="nombre"><br>
+        <label>Fecha de nacimiento:</label>
+        <input type="date" name="fechaNacimiento"><br>
+        <label>Tipo de comida</label><br>
+        Frio<input type="radio" name="tipoComida" value="Frio"><br>
+        Caliente<input type="radio" name="tipoComida" value="Caliente"><br>
+        <label>Presupuesto:</label>
+        <input type="number" name="presupuesto" min="0"><br>
+        <label>Cantidad de personas:</label>
+        <input type="number" name="cantComensales" min="1" max="20"><br>
+        <input type="submit">
     </form>
 </div>
