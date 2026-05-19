@@ -1,4 +1,4 @@
-class SugeridorReceta
+public class SugeridorReceta
 {
     public string nombre {get;set;}
     public DateTime fechaNacimiento {get;set;}
@@ -19,7 +19,7 @@ class SugeridorReceta
     public int calcularEdad()
     {
         int edad;
-        edad = this.fechaNacimiento.Year - DateTime.Today.Year;
+        edad = DateTime.Today.Year -  this.fechaNacimiento.Year;
         if(this.fechaNacimiento.Month > DateTime.Today.Month)
         {
             edad -= 1;
@@ -66,7 +66,7 @@ class SugeridorReceta
         {
             return 20;
         }
-        else if (this.tipoComida == "Caliente" && this.cantComensales < 7 && this.cantComensales > 4)
+        else if (this.tipoComida == "Caliente" && this.cantComensales <= 7 && this.cantComensales >= 4)
         {
             return 40;
         }
@@ -78,7 +78,7 @@ class SugeridorReceta
         {
             return 10;
         }
-        else if (this.tipoComida == "Frio" && this.cantComensales < 7 && this.cantComensales > 4)
+        else if (this.tipoComida == "Frio" && this.cantComensales <= 7 && this.cantComensales >= 4)
         {
             return 20;
         }

@@ -37,6 +37,6 @@ public class HomeController : Controller
         ViewBag.tiempo = sugeridor.CalcularTiempo();
         ViewBag.cantidad = sugeridor.cantComensales;
         ViewBag.dificultad = sugeridor.DeterminarDificultad();
-        return View(Resultado);
+        return View("Resultado");
     }
 }
